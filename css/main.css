@@ -1,0 +1,804 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.bg {
+  width: 100vw;
+  height: auto;
+}
+
+.top {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #ff3d54;
+  background: linear-gradient(0deg, #ff3d54 0%, #ff8f70 100%);
+  border-radius: 0 0 0 100px;
+}
+.top-img {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 80%;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg-pattern-intro.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 180vh;
+}
+.top-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.top-nav-logo {
+  width: 50%;
+  height: 100%;
+  padding-left: 30px;
+}
+.top-nav-logo-img {
+  background-image: url("../images/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 45px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top-nav-bg {
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  background: white;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70% 30%;
+}
+.top-nav-bg-list {
+  width: 100%;
+  height: auto;
+}
+.top-nav-bg-list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.top-nav-bg-list ul li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-nav-bg-list ul li a {
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  color: #1f3f5b;
+  text-align: center;
+  width: auto;
+  position: relative;
+}
+.top-nav-bg-list ul li a::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background-image: url("../images/icon-arrow-dark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -20px;
+}
+.top-nav-bg-list ul li ul {
+  display: none;
+}
+.top-nav-bg-list ul li.top-nav-bg-list-active a {
+  color: #4b5862;
+}
+.top-nav-bg-list ul li.top-nav-bg-list-active a::after {
+  transform: rotate(180deg);
+}
+.top-nav-bg-list ul li.top-nav-bg-list-active ul {
+  display: flex;
+  width: 280px;
+  height: 140px;
+  background: rgba(200, 200, 203, 0.35);
+  margin-top: 40px;
+  border-radius: 5px;
+  animation: fadeMenuMobile 0.5s linear forwards;
+}
+.top-nav-bg-list ul li.top-nav-bg-list-active ul li a {
+  font-size: 2rem;
+  color: #4b5862;
+}
+.top-nav-bg-list ul li.top-nav-bg-list-active ul li a::after {
+  background-image: none;
+}
+.top-nav-bg-user {
+  width: 100%;
+  height: 100%;
+}
+.top-nav-bg-user ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.top-nav-bg-user ul li {
+  list-style: none;
+}
+.top-nav-bg-user ul li button {
+  width: 160px;
+  height: 55px;
+  border-radius: 50px;
+  border: none;
+}
+.top-nav-bg-user ul li button a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.top-nav-bg-user ul li:nth-child(1) button {
+  background: white;
+}
+.top-nav-bg-user ul li:nth-child(1) button a {
+  color: #1f3f5b;
+}
+.top-nav-bg-user ul li:nth-child(2) button {
+  background: #ff3d54;
+  background: linear-gradient(266deg, #ff3d54 0%, #ff8f70 100%);
+}
+.top-nav-bg-user ul li:nth-child(2) button a {
+  color: white;
+}
+.top-nav-bg-user::before {
+  position: absolute;
+  content: "";
+  width: 280px;
+  height: 0.5px;
+  background: #c8c8cb;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.top-nav-menu {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.top-nav-menu-icon {
+  background-image: url("../images/icon-hamburger.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  right: 30px;
+}
+.top-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.top-content-title {
+  max-width: 355px;
+}
+.top-content-title p {
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  color: white;
+  font-weight: 600;
+}
+.top-content-description {
+  max-width: 355px;
+}
+.top-content-description p {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  color: white;
+  font-weight: 300;
+}
+.top-content-button {
+  max-width: 355px;
+}
+.top-content-button ul {
+  display: flex;
+  width: 355px;
+  justify-content: space-between;
+}
+.top-content-button ul li {
+  list-style: none;
+}
+.top-content-button ul li button {
+  width: 170px;
+  height: 65px;
+  border-radius: 100px;
+}
+.top-content-button ul li button a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+.top-content-button ul li:nth-child(1) button {
+  background: white;
+  border: none;
+}
+.top-content-button ul li:nth-child(1) button a {
+  color: #ff525d;
+}
+.top-content-button ul li:nth-child(2) button {
+  background: transparent;
+  border: 1px solid white;
+}
+.top-content-button ul li:nth-child(2) button a {
+  color: white;
+}
+
+.info {
+  width: 100vw;
+  height: auto;
+}
+.info-title {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+.info-title p {
+  position: relative;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Overpass", sans-serif;
+  color: #1f3f5b;
+  font-weight: 700;
+  top: 65%;
+  transform: translateY(-50%);
+}
+.info-content {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40vh auto;
+}
+.info-content-right {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+}
+.info-content-right-img {
+  background-image: url("../images/illustration-editor-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+.info-content-left {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.info-content-left-text {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+}
+.info-content-left-text p {
+  text-align: center;
+}
+.info-content-left-text-tit {
+  margin: 0 auto;
+  width: 300px;
+  font-size: 3rem;
+  color: #1f3f5b;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+}
+.info-content-left-text-des {
+  margin: 0 auto;
+  font-family: "Overpass", sans-serif;
+  max-width: 700px;
+  font-size: 1.8rem;
+  line-height: 28px;
+  color: #4b5862;
+  font-weight: 400;
+  padding: 10px 20px;
+}
+
+.mobile {
+  width: 100vw;
+  height: 75vh;
+  margin-top: 25vh;
+  position: relative;
+  z-index: 0;
+  background: #2c2d3f;
+  background: linear-gradient(180deg, #2c2d3f 0%, #3f4164 100%);
+  border-radius: 0 100px 0 100px;
+}
+.mobile-bg {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg-pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center -250px;
+  background-size: 500px 500px;
+}
+.mobile-img {
+  z-index: 2;
+  position: absolute;
+  background-image: url("../images/illustration-phones.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 370px;
+  height: 370px;
+  top: -30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.mobile-info {
+  position: relative;
+  padding-top: 25vh;
+  z-index: 3;
+}
+.mobile-info-title {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  padding: 0 20px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+}
+.mobile-info-description {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #c8c8cb;
+  font-family: "Ubuntu", sans-serif;
+  padding: 20px 20px;
+  line-height: 30px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.desktop {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.desktop-img {
+  width: auto;
+  height: 400px;
+  background-image: url("../images/illustration-laptop-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.desktop-info {
+  width: 100%;
+  height: auto;
+  padding: 10px 30px 10px 30px;
+}
+.desktop-info-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f3f5b;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+}
+.desktop-info-description {
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 30px;
+  color: #4b5862;
+  font-family: "Overpass", sans-serif;
+  padding-top: 20px;
+}
+
+.footer {
+  width: 100vw;
+  height: auto;
+  background: #25252d;
+  padding: 50px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 100px 0 0;
+}
+.footer-logo {
+  width: 100%;
+  height: 100px;
+}
+.footer-logo-img {
+  background-image: url("../images/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.footer-product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-product p {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+.footer-product ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 160px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.footer-product ul li {
+  list-style: none;
+}
+.footer-product ul li a {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #c8c8cb;
+  font-family: "Overpass", sans-serif;
+}
+.footer-company {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-company p {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+.footer-company ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 140px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.footer-company ul li {
+  list-style: none;
+}
+.footer-company ul li a {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+  color: #c8c8cb;
+}
+.footer-connect {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-connect p {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+.footer-connect ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 125px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.footer-connect ul li {
+  list-style: none;
+}
+.footer-connect ul li a {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+  color: #c8c8cb;
+}
+
+@media screen and (min-width: 768px) {
+  .top {
+    width: 100vw;
+    background: #ff3d54;
+    background: linear-gradient(266deg, #ff3d54 0%, #ff8f70 100%);
+  }
+  .top-img {
+    width: 100vw;
+    background-size: 200%;
+    background-position: -230px;
+  }
+  .top-nav {
+    max-width: 100vw;
+  }
+  .top-nav-logo {
+    width: 150px;
+  }
+  .top-nav-logo-img {
+    width: 120px;
+  }
+  .top-nav-bg {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: transparent;
+    flex-direction: row;
+  }
+  .top-nav-bg-list ul {
+    flex-direction: row;
+    width: 90%;
+  }
+  .top-nav-bg-list ul li a {
+    font-size: 1.6rem;
+    color: white;
+  }
+  .top-nav-bg-list ul li a::after {
+    background-image: url("../images/icon-arrow-light.svg");
+  }
+  .top-nav-bg-list ul li.top-nav-bg-list-active a {
+    text-decoration: underline;
+    color: white;
+    text-decoration-color: white;
+  }
+  .top-nav-bg-list ul li.top-nav-bg-list-active ul {
+    position: absolute;
+    flex-direction: column;
+    width: 180px;
+    background: white;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+  .top-nav-bg-list ul li.top-nav-bg-list-active ul li {
+    width: auto;
+  }
+  .top-nav-bg-user ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .top-nav-bg-user ul li {
+    margin-right: 20px;
+  }
+  .top-nav-bg-user ul li button {
+    width: 100px;
+    height: 50px;
+  }
+  .top-nav-bg-user ul li:nth-child(1) button {
+    background: transparent;
+  }
+  .top-nav-bg-user ul li:nth-child(1) button a {
+    color: white;
+  }
+  .top-nav-bg-user ul li:nth-child(2) button {
+    background: white;
+  }
+  .top-nav-bg-user ul li:nth-child(2) button a {
+    color: #ff525d;
+  }
+  .top-nav-menu {
+    display: none;
+  }
+  .top-content-title {
+    max-width: 100%;
+  }
+  .top-content-description {
+    max-width: 100%;
+  }
+  .top-content-button ul li button a {
+    font-weight: 700;
+  }
+
+  .info {
+    height: 100vh;
+    position: relative;
+  }
+  .info-title {
+    z-index: 1;
+  }
+  .info-content {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    position: relative;
+    height: 90vh;
+  }
+  .info-content-left {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    padding-left: 10%;
+    padding-top: 10%;
+    height: 100%;
+  }
+  .info-content-left-text p {
+    text-align: left;
+  }
+  .info-content-left-text-tit {
+    max-width: 500px;
+    width: 100%;
+    font-size: 2.2rem;
+    margin: 0;
+  }
+  .info-content-left-text-des {
+    max-width: 550px;
+    padding: 10px 0;
+    margin: 0;
+  }
+  .info-content-right {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    position: absolute;
+    width: 100%;
+    top: -100px;
+    height: 100%;
+  }
+  .info-content-right-img {
+    background-position: left;
+    z-index: 4;
+    height: 120%;
+    background-image: url("../images/illustration-editor-desktop.svg");
+    background-size: cover;
+  }
+
+  .mobile {
+    height: 60vh;
+  }
+  .mobile-bg {
+    background-position: -183px -250px;
+    background-size: 500px 500px;
+  }
+  .mobile-img {
+    top: 0;
+    bottom: 0;
+    left: -50vw;
+    margin: auto;
+    width: 50vw;
+    height: 40vw;
+  }
+  .mobile-info {
+    width: 50%;
+    position: relative;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding-top: 0;
+  }
+  .mobile-info p {
+    text-align: left;
+    padding: 0 20px 0 0px;
+    margin: 0;
+  }
+  .mobile-info-description {
+    font-size: 1.4rem;
+  }
+
+  .desktop {
+    height: 90vh;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .desktop-img {
+    position: relative;
+    background-image: url("../images/illustration-laptop-desktop.svg");
+    width: 50vw;
+    height: 100%;
+    background-position: -240px;
+    background-size: 100%;
+  }
+  .desktop-info {
+    position: relative;
+    width: 50%;
+  }
+  .desktop-info-title {
+    text-align: left;
+  }
+  .desktop-info-description {
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .footer-logo-img {
+    height: 30px;
+    margin: 0;
+  }
+  .footer-product {
+    align-items: flex-start;
+  }
+  .footer-product ul {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  .footer-company {
+    align-items: flex-start;
+  }
+  .footer-company ul {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  .footer-connect {
+    align-items: flex-start;
+  }
+  .footer-connect ul {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+}
+@keyframes fadeMenuMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes showBgMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideBgMobile {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
